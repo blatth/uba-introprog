@@ -13,8 +13,8 @@ todosDigitosIguales:: Integer -> Bool
 todosDigitosIguales n | n<10 = True
                       | otherwise = digitoUnidades n == digitoUnidades(sacarUnidades n) && todosDigitosIguales(sacarUnidades n)
 
--- mod 10 -> devuelve el último dígito
--- div 10 -> devuelve todos menos el último dígito
+-- digitoUnidades: mod 10 -> devuelve el último dígito
+-- sacarUnidades: div 10 -> devuelve todos menos el último dígito
 
 -- v Ejercicio 8
 

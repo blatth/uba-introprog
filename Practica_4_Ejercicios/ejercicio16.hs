@@ -27,5 +27,4 @@ proximoPrimo n | esPrimo (n+1) = n+1
 nEsimoPrimo:: Integer -> Integer
 nEsimoPrimo 1 = 2
 nEsimoPrimo n = proximoPrimo(nEsimoPrimo(n-1))
-
--- ^ preguntar cómo funciona esto
+{- forma en la que funciona: cuando nEsimoPrimo /= 1, sigue anidando funciones nEsimoPrimo n adentro de los paréntesis, por lo que queda algo de esta forma: proximoPrimo(proximoPrimo(proximoPrimo(proximoPrimo(proximoPrimo(nEsimoPrimo n-1))))) -}

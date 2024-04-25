@@ -67,7 +67,11 @@ personas ((p1, p2):ps) = (sacarRepetido p1 (sacarRepetido p2 (personas ps)))
 sacarRepetido:: Eq t => t -> [t] -> [t]
 sacarRepetido x [] = [x]
 sacarRepetido x (y:ys) | x==y = y:ys
-                       | otherwise = y:sacarRepetido x ys {- si x/=y => devuelve la lista con y para luego aplicar la función al término que dejé y el resto de la lista con la cual "concatené" -}
+                       | otherwise = y:sacarRepetido x ys 
+
+{- 
+si x/=y => devuelve la lista con y para luego aplicar la función (de forma recursiva) al término que dejé y el resto de la lista con la cual ""concatené"" 
+-}
 
 {-
 Esto era todo un paso engorroso que no tenía sentido, puede reducirse todo a una línea (sacarRepetido)
@@ -87,3 +91,10 @@ quitar z (x:xs) | z == x = xs
 -}
 
 -- 3
+
+amigosDe:: String -> [(String, String)] -> [String]
+amigosDe _ [] = []
+amigosDe x ((p1, p2):ys) | x == p1 = p2:amigosDe x ys
+                         | x == p2 = p1:amigosDe x ys
+                         | otherwise = amigosDe x ys
+

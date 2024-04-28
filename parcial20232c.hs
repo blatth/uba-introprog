@@ -16,12 +16,14 @@ votosEnBlanco _ votosAfirmativos votosTotales = votosTotales - (computoVotosAfir
 
 -- 2
 
-formulasValidas:: [(String, String)] -> Bool
+{-
+ formulasValidas:: [(String, String)] -> Bool
 formulasValidas [] = True
 formulasValidas ((a,b):xs) | a == b = False
                            | 
                            | 
-                           | otherwise = formulasValidas xs
+                           | otherwise = formulasValidas xs 
+-} 
 
 {- consultar cómo hacer para poner que cuando candidatoPerteneceTupla = true, formulaValida = false  -}
 
@@ -33,3 +35,18 @@ candidatoPerteneceTupla n ((a,b):xs) | n == a = True
                                      | otherwise = candidatoPerteneceTupla n xs
 
 {- candidatoPerteneceTupla verifica que el candidato dado esté o no en la tupla. si se compara con una lista (que no es la vacía) y da false, comienza el proceso de vuelta. si se compara con un vacío termina la secuencia (caso base). -}
+
+-- 3
+
+division:: Int -> Int -> Float
+division a b = fromIntegral a / fromIntegral b
+
+numeroDeVotos:: String -> [(String, String)] -> [Int] -> Int
+numeroDeVotos presidente ((candidato, vice):xs) (votos:ys) | presidente == candidato = computoVotosAfirmativos(votos:ys)
+                                                           | otherwise = numeroDeVotos presidente xs ys
+
+porcentajeDeVotos:: String -> [(String, String)] -> [Int] -> Float
+porcentajeDeVotos presidente formula (votos:ys) = division ((numeroDeVotos presidente formula (votos:ys))*100) (computoVotosAfirmativos (votos:ys))
+
+{- Me da siempre 100, obviamente, porque siempre le paso la misma lista y compara con esa. Siento como si faltase un input (votosTotales), pero no sé otra forma de interpretar el enunciado. Preguntar -}
+

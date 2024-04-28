@@ -1,3 +1,5 @@
+{- consigna: https://gitlab.com/faustomartinez/uba-algoritmos-y-estructuras-de-datos-i/-/blob/main/1er-parcial/PrimerParcial.pdf -}
+
 -- 1
 
 computoVotosAfirmativos:: [Int] -> Int
@@ -14,3 +16,20 @@ votosEnBlanco _ votosAfirmativos votosTotales = votosTotales - (computoVotosAfir
 
 -- 2
 
+formulasValidas:: [(String, String)] -> Bool
+formulasValidas [] = True
+formulasValidas ((a,b):xs) | a == b = False
+                           | 
+                           | 
+                           | otherwise = formulasValidas xs
+
+{- consultar cómo hacer para poner que cuando candidatoPerteneceTupla = true, formulaValida = false  -}
+
+candidatoPerteneceTupla:: String -> [(String, String)] -> Bool
+
+candidatoPerteneceTupla n [] = False
+candidatoPerteneceTupla n ((a,b):xs) | n == a = True
+                                     | n == b = True 
+                                     | otherwise = candidatoPerteneceTupla n xs
+
+{- candidatoPerteneceTupla verifica que el candidato dado esté o no en la tupla. si se compara con una lista (que no es la vacía) y da false, comienza el proceso de vuelta. si se compara con un vacío termina la secuencia (caso base). -}

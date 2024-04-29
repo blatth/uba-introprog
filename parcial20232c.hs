@@ -17,7 +17,7 @@ votosEnBlanco _ votosAfirmativos votosTotales = votosTotales - (computoVotosAfir
 -- 2
 
 {-
- formulasValidas:: [(String, String)] -> Bool
+formulasValidas:: [(String, String)] -> Bool
 formulasValidas [] = True
 formulasValidas ((a,b):xs) | a == b = False
                            | 

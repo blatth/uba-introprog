@@ -1,4 +1,4 @@
-{- consigna: https://gitlab.com/faustomartinez/uba-algoritmos-y-estructuras-de-datos-i/-/blob/main/1er-parcial/PrimerParcial.pdf -}
+{- consigna: https://github.com/blatth/introprog/blob/master/primerparcial20232c.pdf -}
 
 -- 1
 

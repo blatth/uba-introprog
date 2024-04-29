@@ -1,4 +1,4 @@
-{- consigna: https://github.com/blatth/introprog/blob/master/primerparcial20232c.pdf -}
+{- consigna: https://github.com/blatth/introprog/blob/master/Parciales/primerparcial20232c.pdf -}
 
 -- 1
 

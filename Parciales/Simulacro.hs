@@ -101,4 +101,22 @@ amigosDe x ((p1, p2):ys) | x == p1 = p2:amigosDe x ys
   
 -- 4
 
+apariciones:: String -> [(String, String)] -> Int
+apariciones _ [] = 0
+apariciones persona ((p1, p2):xs) | persona == p1 = 1 + apariciones persona xs
+                                  | persona == p2 = 1 + apariciones persona xs
+                                  | otherwise = apariciones persona xs
 
+{- 
+ejemplo: apariciones "Pedro" [("Pedro", "Juan"),("Pedro", "María"),("Julieta", "Juan")] -> 2 
+Lo que hace es ver cuántas veces aparece la persona en una lista de varias personas, ignorando si está repetido (por lo que no hay que validar si es una relacionValida o no!). Lo que me devuelve es un int con la cantidad de veces que aparece dicha persona
+-}
+
+aparicionesPorPersona:: [String] -> [(String, String)] -> [(String, Int)]
+aparicionesPorPersona [] _ = []
+aparicionesPorPersona (persona:xs) relaciones = (persona, apariciones persona relaciones) : aparicionesPorPersona xs relaciones
+
+{- 
+ejemplo: aparicionesPorPersona ["Pedro","Julieta"] [("Pedro", "Juan"),("Pedro", "María"),("Julieta", "Juan")] -> [("Pedro",2),("Julieta",1)] 
+Lo que hace es matchear una lista de personas con la cantidad de veces que aparece, devolviendo una lista de tuplas compuestas por el nombre y las apariciones.
+-}

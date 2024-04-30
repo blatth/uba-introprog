@@ -11,19 +11,19 @@ computoVotosAfirmativos (x:xs) = x + computoVotosAfirmativos xs
 votosEnBlanco:: [(String, String)] -> [Int] -> Int -> Int
 votosEnBlanco _ votosAfirmativos votosTotales = votosTotales - (computoVotosAfirmativos votosAfirmativos)
 
-{- dado lo siguiente: [("Biden","Biondini")] [1,1,2,3,4,1,1,] 180, donde 1: fórmula, 2: votosafirmativos, 3: votostotales, le resta a la totalidad de los votos el cómputo de votos afirmativos realizado sobre la lista que le es dada. sería como sacar un cardinal por complemento. -}
+{- dado lo siguiente: [("Biden","Peron")] [1,1,2,3,4,1,1,] 180, donde 1: fórmula, 2: votosafirmativos, 3: votostotales, le resta a la totalidad de los votos el cómputo de votos afirmativos realizado sobre la lista que le es dada. sería como sacar un cardinal por complemento. -}
 
 
 -- 2
 
-{-
+
 formulasValidas:: [(String, String)] -> Bool
 formulasValidas [] = True
 formulasValidas ((a,b):xs) | a == b = False
-                           | 
-                           | 
+                           | candidatoPerteneceTupla a xs = False
+                           | candidatoPerteneceTupla b xs = False 
                            | otherwise = formulasValidas xs 
--} 
+ 
 
 {- consultar cómo hacer para poner que cuando candidatoPerteneceTupla = true, formulaValida = false  -}
 
@@ -39,14 +39,17 @@ candidatoPerteneceTupla n ((a,b):xs) | n == a = True
 -- 3
 
 division:: Int -> Int -> Float
+
 division a b = fromIntegral a / fromIntegral b
 
 numeroDeVotos:: String -> [(String, String)] -> [Int] -> Int
-numeroDeVotos presidente ((candidato, vice):xs) (votos:ys) | presidente == candidato = computoVotosAfirmativos(votos:ys)
-                                                           | otherwise = numeroDeVotos presidente xs ys
+numeroDeVotos presidente ((candidato, vice):xs) (votos:ys) | presidente == candidato = votos
+                                                            | otherwise = numeroDeVotos presidente xs ys
 
 porcentajeDeVotos:: String -> [(String, String)] -> [Int] -> Float
-porcentajeDeVotos presidente formula (votos:ys) = division ((numeroDeVotos presidente formula (votos:ys))*100) (computoVotosAfirmativos (votos:ys))
+porcentajeDeVotos presidente formulas (votos:ys) = division ((numeroDeVotos presidente formulas (votos:ys))*100) (computoVotosAfirmativos (votos:ys))
 
-{- Me da siempre 100, obviamente, porque siempre le paso la misma lista y compara con esa. Siento como si faltase un input (votosTotales), pero no sé otra forma de interpretar el enunciado. Preguntar -}
+-- 4
 
+proximoPresidente:: [(String, String)] -> [Int] -> String
+proximoPresidente presidente formulas votos 

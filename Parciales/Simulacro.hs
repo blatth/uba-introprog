@@ -49,12 +49,13 @@ logicas (&&, ||, ==, /=, >, <, >=, <=)
 module Simulacro where
 
 -- 1
-
+{- 
 relacionesValidas:: [(String, String)] -> Bool
 relacionesValidas [] = True
-relacionesValidas [x, y]   | x /= y = True
-relacionesValidas (x:y:xs) | fst(x) == snd(x) || x == y = False
-                           | otherwise = relacionesValidas(y:xs)
+relacionesValidas ((p1, p2):xs) | p1 == p2 (pertence (p1, p2) xs) = False
+                                | p2 == p1 (pertence (p1, p2) xs) = False
+                                | otherwise = relacionesValidas xs
+-}
 
 -- 2
 
@@ -97,4 +98,9 @@ amigosDe _ [] = []
 amigosDe x ((p1, p2):ys) | x == p1 = p2:amigosDe x ys
                          | x == p2 = p1:amigosDe x ys
                          | otherwise = amigosDe x ys
+  
+
+
+-- 4
+
 

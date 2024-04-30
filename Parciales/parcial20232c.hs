@@ -24,9 +24,6 @@ formulasValidas ((a,b):xs) | a == b = False
                            | candidatoPerteneceTupla b xs = False 
                            | otherwise = formulasValidas xs 
  
-
-{- consultar cómo hacer para poner que cuando candidatoPerteneceTupla = true, formulaValida = false  -}
-
 candidatoPerteneceTupla:: String -> [(String, String)] -> Bool
 
 candidatoPerteneceTupla n [] = False

@@ -120,3 +120,14 @@ aparicionesPorPersona (persona:xs) relaciones = (persona, apariciones persona re
 ejemplo: aparicionesPorPersona ["Pedro","Julieta"] [("Pedro", "Juan"),("Pedro", "María"),("Julieta", "Juan")] -> [("Pedro",2),("Julieta",1)] 
 Lo que hace es matchear una lista de personas con la cantidad de veces que aparece, devolviendo una lista de tuplas compuestas por el nombre y las apariciones.
 -}
+
+listaAparicionesPorPersona:: [(String,String)] -> [(String,Int)]
+listaAparicionesPorPersona relaciones = aparicionesPorPersona (personas relaciones) relaciones
+
+maximoAp:: [(String, Int)] -> String
+maximoAp ((p1, ap1):xs) = p1
+maximoAp ((p1, ap1):(p2, ap2):xs) | ap1 > ap2 = maximoAp((p1, ap1):xs)  
+                                  | otherwise = maximoAp((p2, ap2):xs)
+
+personaConMasAmigos:: [(String, String)] -> String
+personaConMasAmigos relaciones = maximoAp(listaAparicionesPorPersona relaciones)

@@ -46,7 +46,7 @@ not :: Bool -> Bool
 logicas (&&, ||, ==, /=, >, <, >=, <=)
 -}
 
-module Simulacro where
+
 
 -- 1
 

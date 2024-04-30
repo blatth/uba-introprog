@@ -49,30 +49,30 @@ logicas (&&, ||, ==, /=, >, <, >=, <=)
 module Simulacro where
 
 -- 1
-{- 
+
 relacionesValidas:: [(String, String)] -> Bool
 relacionesValidas [] = True
-relacionesValidas ((p1, p2):xs) | p1 == p2 (pertence (p1, p2) xs) = False
-                                | p2 == p1 (pertence (p1, p2) xs) = False
+relacionesValidas ((p1, p2):xs) | p1 == p2 || p2 == p1 || (pertenece (p1, p2) xs) = False
                                 | otherwise = relacionesValidas xs
--}
 
+{- nombré p1=persona1 y ps2=persona2 para no confundirme sobre qué evalúa cada función -}
+
+pertenece:: (Eq t) => t -> [t] -> Bool
+pertenece _ [] = False
+pertenece x (y:ys) = x == y || pertenece x ys 
+                              
 -- 2
 
 personas:: [(String, String)] -> [String]
 personas [] = []
 personas ((p1, p2):ps) = (sacarRepetido p1 (sacarRepetido p2 (personas ps)))
 
-{- nombré p1=persona1 y ps2=persona2 para no confundirme sobre qué evalúa cada función -}
-
 sacarRepetido:: Eq t => t -> [t] -> [t]
 sacarRepetido x [] = [x]
 sacarRepetido x (y:ys) | x==y = y:ys
                        | otherwise = y:sacarRepetido x ys 
 
-{- 
-si x/=y => devuelve la lista con y para luego aplicar la función (de forma recursiva) al término que dejé y el resto de la lista con la cual ""concatené"" 
--}
+{- si x/=y => devuelve la lista con y para luego aplicar la función (de forma recursiva) al término que dejé y el resto de la lista con la cual ""concatené"" -}
 
 {-
 Esto era todo un paso engorroso que no tenía sentido, puede reducirse todo a una línea (sacarRepetido)
@@ -99,8 +99,6 @@ amigosDe x ((p1, p2):ys) | x == p1 = p2:amigosDe x ys
                          | x == p2 = p1:amigosDe x ys
                          | otherwise = amigosDe x ys
   
-
-
 -- 4
 
 

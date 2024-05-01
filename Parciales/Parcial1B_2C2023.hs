@@ -131,3 +131,4 @@ vallaMenosVencida [(e1,j1)] _ = j1
 vallaMenosVencida ((e1,j1):(e2,j2):xs) (gpe1:gpe2:ys) | gpe1 < gpe2 = vallaMenosVencida ((e1,j1):xs) (gpe1:ys)
                                                       | otherwise = vallaMenosVencida ((e2,j2):xs) (gpe2:ys)
 
+{- Los parciales del 2C que hice son prácticamente iguales, solamente cambia la forma de la redacción de la consigna. Hice ambos ejemplos para practicar -}

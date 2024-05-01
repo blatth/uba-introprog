@@ -52,20 +52,21 @@ logicas (&&, ||, ==, /=, >, <, >=, <=)
 
 relacionesValidas:: [(String, String)] -> Bool
 relacionesValidas [] = True
-relacionesValidas ((p1, p2):xs) | p1 == p2 || p2 == p1 || (pertenece (p1, p2) xs) = False
+relacionesValidas ((p1, p2):xs) | p1 == p2 || p2 == p1 || pertenece (p1, p2) xs = False
                                 | otherwise = relacionesValidas xs
 
 {- nombré p1=persona1 y ps2=persona2 para no confundirme sobre qué evalúa cada función -}
 
-pertenece:: (Eq t) => t -> [t] -> Bool
-pertenece _ [] = False
-pertenece x (y:ys) = x == y || pertenece x ys 
+pertenece :: (Eq t) => t -> [t] -> Bool
+pertenece x [] = False
+pertenece x (y:ys) | x == y = True
+                   | otherwise = pertenece x ys
                               
 -- 2
 
 personas:: [(String, String)] -> [String]
 personas [] = []
-personas ((p1, p2):ps) = (sacarRepetido p1 (sacarRepetido p2 (personas ps)))
+personas ((p1, p2):ps) = sacarRepetido p1 (sacarRepetido p2 (personas ps))
 
 sacarRepetido:: Eq t => t -> [t] -> [t]
 sacarRepetido x [] = [x]
@@ -111,6 +112,16 @@ apariciones persona ((p1, p2):xs) | persona == p1 = 1 + apariciones persona xs
 ejemplo: apariciones "Pedro" [("Pedro", "Juan"),("Pedro", "María"),("Julieta", "Juan")] -> 2 
 Lo que hace es ver cuántas veces aparece la persona en una lista de varias personas, ignorando si está repetido (por lo que no hay que validar si es una relacionValida o no!). Lo que me devuelve es un int con la cantidad de veces que aparece dicha persona
 -}
+                                  
+personaConMasAmigos :: [(String, String)] -> String 
+personaConMasAmigos [(p1, p2)] = p1
+personaConMasAmigos ((p1, p2):xs) | apariciones p1 ((p1, p2):xs) > apariciones (personaConMasAmigos xs) xs = p1
+                                  | apariciones p2 ((p1, p2):xs) > apariciones (personaConMasAmigos xs) xs = p2
+                                  | otherwise = personaConMasAmigos xs
+
+{-
+
+Todo lo que está acá abajo es un código que intenté (que, por lo que probé, funcionaba) pero era mucho más extenso que lo anterior
 
 aparicionesPorPersona:: [String] -> [(String, String)] -> [(String, Int)]
 aparicionesPorPersona [] _ = []
@@ -121,13 +132,11 @@ ejemplo: aparicionesPorPersona ["Pedro","Julieta"] [("Pedro", "Juan"),("Pedro", 
 Lo que hace es matchear una lista de personas con la cantidad de veces que aparece, devolviendo una lista de tuplas compuestas por el nombre y las apariciones.
 -}
 
-listaAparicionesPorPersona:: [(String,String)] -> [(String,Int)]
+listaAparicionesPorPersona:: [(String, String)] -> [(String,Int)]
 listaAparicionesPorPersona relaciones = aparicionesPorPersona (personas relaciones) relaciones
 
 maximoAp:: [(String, Int)] -> String
 maximoAp ((p1, ap1):xs) = p1
 maximoAp ((p1, ap1):(p2, ap2):xs) | ap1 > ap2 = maximoAp((p1, ap1):xs)  
                                   | otherwise = maximoAp((p2, ap2):xs)
-
-personaConMasAmigos:: [(String, String)] -> String
-personaConMasAmigos relaciones = maximoAp(listaAparicionesPorPersona relaciones)
+-}

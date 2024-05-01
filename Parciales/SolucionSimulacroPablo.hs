@@ -48,9 +48,15 @@ cantAmigos x ((a, b):ys) | x == a = 1 + cantAmigos x ys
                          | x == b = 1 + cantAmigos x ys
                          | otherwise = cantAmigos x ys
 
-personaConMasAmigos :: [(String, String)] -> String 
+{- personaConMasAmigos :: [(String, String)] -> String 
 personaConMasAmigos [(a, b)] = a
 personaConMasAmigos ((a, b):xs) | cantAmigos a ((a,b):xs) > cantAmigos (personaConMasAmigos xs) xs = a
                                 | cantAmigos b ((a,b):xs) > cantAmigos (personaConMasAmigos xs) xs = b
                                 | otherwise = personaConMasAmigos xs
+-}
 
+personaConMasAmigos :: [(String, String)] -> String 
+personaConMasAmigos [(a, b)] = a
+personaConMasAmigos ((a, b):xs)   | cantAmigos a xs > cantAmigos (personaConMasAmigos xs) xs = a
+                                  | cantAmigos b xs > cantAmigos (personaConMasAmigos xs) xs = b
+                                  | otherwise = personaConMasAmigos xs

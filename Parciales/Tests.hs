@@ -9,7 +9,13 @@ tests = test [
   "componentes repetidas" ~: (relacionesValidas [("ana", "ana")]) ~?= False,
   "tupla repetida" ~: (relacionesValidas [("ana", "pedro"), ("ana", "pedro")]) ~?= False,
   "tupla repetida invertida" ~: (relacionesValidas [("ana", "pedro"), ("pedro", "ana")]) ~?= False,
-  "todas diferentes" ~: (relacionesValidas [("ana", "pedro"), ("ana", "carlos")]) ~?= True
+  "todas diferentes" ~: (relacionesValidas [("ana", "pedro"), ("ana", "carlos")]) ~?= True,
+  "personas: con repetición" ~: (personas [("ana", "pedro"), ("ana", "carlos")]) ~?= ["carlos","ana","pedro"],
+  "personas: sin repetición" ~: (personas [("ana", "pedro"), ("jose", "carlos")]) ~?= ["carlos","jose","pedro","ana"],
+  "amigosDe: caso base" ~: (amigosDe "Ana" []) ~?= [],
+  "amigosDe: caso recursivo" ~: (amigosDe "Ana" [("Ana","Pedro"),("Jose", "María"),("Ana", "Martín")]) ~?= ["Pedro","Martín"],
+  "personaConMasAmigos: caso base" ~: (personaConMasAmigos [("Pedro","José")]) ~?= "Pedro",
+  "personaConMasAmigos: caso recursivo" ~: (personaConMasAmigos [("Pedro","Jose"),("Pedro","Martin"),("Pedro","Ana"),("Jose", "Rogelio")]) ~?= "Pedro"
   ]
 
 -- -- EJEMPLOS

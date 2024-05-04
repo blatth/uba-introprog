@@ -70,6 +70,8 @@ personas:: [(String, String)] -> [String]
 personas [] = []
 personas ((p1, p2):ps) = sacarRepetido p1 (sacarRepetido p2 (personas ps))
 
+{- Al ejecutar la f personas, devuelve la lista de (string, string) pero con el orden i nvertido -}
+
 sacarRepetido:: Eq t => t -> [t] -> [t]
 sacarRepetido x [] = [x]
 sacarRepetido x (y:ys) | x==y = y:ys

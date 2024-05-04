@@ -1,4 +1,5 @@
-import Language.Haskell.TH (javaScript)
+module Parcial1B_2C2023 where
+
 {-
 
 CONSIGNA

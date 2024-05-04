@@ -1,3 +1,5 @@
+module Simulacro where
+
 {-
 ENUNCIADO
  
@@ -52,7 +54,7 @@ logicas (&&, ||, ==, /=, >, <, >=, <=)
 
 relacionesValidas:: [(String, String)] -> Bool
 relacionesValidas [] = True
-relacionesValidas ((p1, p2):xs) | p1 == p2 || p2 == p1 || pertenece (p1, p2) xs = False
+relacionesValidas ((p1, p2):xs) | p1 == p2 || p2 == p1 || pertenece (p1, p2) xs || pertenece (p2, p1) xs = False
                                 | otherwise = relacionesValidas xs
 
 {- nombré p1=persona1 y ps2=persona2 para no confundirme sobre qué evalúa cada función -}

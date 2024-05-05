@@ -11,3 +11,9 @@ quitar z (x:xs) | z == x = xs
 ordenar:: [Integer] -> [Integer]
 ordenar [] = []
 ordenar (x:xs) = ordenar(quitar(maximo(x:xs)) (x:xs)) ++ [maximo(x:xs)]
+
+quitarTodos :: (Eq t) => t -> [t] -> [t]
+quitarTodos x [] = []
+quitarTodos x (y:ys) | y == x = quitarTodos x ys 
+                     | otherwise = y:(quitarTodos x ys)
+

@@ -48,12 +48,16 @@ desplazar c n | ord c + n <= 122 && letraANatural c >= 0 && letraANatural c <= 2
 
 -- 4
 
---cifrar:: String -> Int -> String
---cifrar s n | 
+cifrar :: String -> Int -> String
+cifrar "" _ = ""
+cifrar s n | esMiniscula (head s) = (desplazar (head s) n) : (cifrar (tail s) n)
+           | otherwise = (head s) : (cifrar (tail s) n)
 
 -- 5
 
-
+-- CORREGIR
+descifrar:: String -> Int -> String
+descifrar s n = cifrar s (-n)
 
 -- 7
 

@@ -41,8 +41,26 @@ letraANatural c = ord c - 97
 
 -- 3
 
-desplazar:: Char -> Int - Char
-desplazar c n | letraANatural c >= 0 && letraANatural c <= 25 = chr(letraANatural c + 97 + n)
+desplazar:: Char -> Int -> Char
+desplazar c n | ord c + n <= 122 && letraANatural c >= 0 && letraANatural c <= 25 = chr(letraANatural c + 97 + n)
+              | ord c + n > 122 && letraANatural c >= 0 && letraANatural c <= 25 = chr(letraANatural c + 71 + n)
               | otherwise = c
 
+-- 4
+
+--cifrar:: String -> Int -> String
+--cifrar s n | 
+
+-- 5
+
+
+
+-- 7
+
+-- frecuencia:: String -> [Float]
+
+contar:: String -> Int
+contar [] = 0
+contar (x:xs) | ord x < 97 || ord x > 122 = 0 + contar xs
+              | ord x >= 97 && ord x <= 122 = 1 + contar xs
 

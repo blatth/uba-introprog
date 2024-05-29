@@ -17,3 +17,6 @@ quitarTodos x [] = []
 quitarTodos x (y:ys) | y == x = quitarTodos x ys 
                      | otherwise = y:(quitarTodos x ys)
 
+
+
+

@@ -10,11 +10,16 @@ def pertenece(s:list[int], e:int) -> bool:
             res = True
         ind += 1
 
-def pertenece2(s:list[int], e:int) -> bool:
-    res:bool = False
-    for v in s:
-        if (v==e):
-            return v
+def pertenece2(e:int, s:[int]) -> bool:
+    i:int = 0
+    pertenece2:bool = False
+    while (i < len(s)):
+        if (s[i] == e):
+          pertenece2 = True
+        i = i + 1
+
+    return pertenece2
+
 
 # esta última implementación no sé si se puede usar, 99% seguro que no. la anterior es muy similar
 
@@ -45,6 +50,22 @@ def suma_tota2(s:list[int]) -> int:
 
 x:int = suma_total2 ([5,6,7])
 print(x)
+
+#Ej 1.4
+
+def ordenados(seq:[int]) -> bool: # se fija si los elementos de una lista están ordenados o no
+    for i in range(len(seq)-1):
+        if (not(seq[i]<seq[i+1])):
+            return False
+    return True
+
+#Ej 1.5
+
+def contPLarga(s:[str]) -> bool:
+    for i in range (len(s)):
+        if ((len(s[i]) > 7)):
+            return True
+    return False
 
 #Ej 1.7
 
@@ -96,4 +117,54 @@ def saldoActual(operaciones:[(str,float)])->float:
     return saldo
 
 
+#Ej 1.9
+
+'''
+#PREGUNTAR: por qué al hacer print(vocDif("holaiu")) = False
+
+def pertenecep(s:str, e:chr) -> bool:
+    i:int = 0
+    pertenecep:bool = False
+    while (i < len(s)):
+        if (s[i] == e):
+          pertenecep = True
+        i = i + 1
+
+    return pertenecep
+
+
+def vocDif(palabra:str) -> bool:
+    vocCounter: int = 0
+    if (pertenecep('a', palabra)) or (pertenecep('A', palabra)):
+        vocCounter += 1
+    if (pertenecep('e', palabra)) or (pertenecep('E', palabra)):
+        vocCounter += 1
+    if (pertenecep('i', palabra)) or (pertenecep('I', palabra)):
+        vocCounter += 1
+    if (pertenecep('o', palabra)) or (pertenecep('O', palabra)):
+        vocCounter += 1
+    if (pertenecep('u', palabra)) or (pertenecep('U', palabra)):
+        vocCounter += 1
+    return vocCounter >= 3
+'''
+
+def contVoc(palabra:str) -> int:
+    vocCounter: int = 0
+    if palabra.count('a') >= 1 or palabra.count('A') >= 1:
+        vocCounter += 1
+    if palabra.count('e') >= 1 or palabra.count('E') >= 1:
+        vocCounter += 1
+    if palabra.count('i') >= 1 or palabra.count('I') >= 1:
+        vocCounter += 1
+    if palabra.count('o') >= 1 or palabra.count('O') >= 1:
+        vocCounter += 1
+    if palabra.count('u') >= 1 or palabra.count('U') >= 1:
+        vocCounter += 1
+
+    return vocCounter
+
+def vocDif(palabra:str) -> bool:
+    return contVoc(palabra) >= 3
+
+# ^ si le tiro print(vocDif("holaiu")) = True, así que funciona. con mayus también funciona
 

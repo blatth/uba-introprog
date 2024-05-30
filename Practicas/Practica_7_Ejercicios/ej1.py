@@ -122,28 +122,28 @@ def saldoActual(operaciones:[(str,float)])->float:
 '''
 #PREGUNTAR: por qué al hacer print(vocDif("holaiu")) = False
 
-def pertenecep(s:str, e:chr) -> bool:
+def perteneceStr(s:str, e:chr) -> bool:
     i:int = 0
-    pertenecep:bool = False
+    perteneceStr:bool = False
     while (i < len(s)):
         if (s[i] == e):
-          pertenecep = True
+          perteneceStr = True
         i = i + 1
 
-    return pertenecep
+    return perteneceStr
 
 
 def vocDif(palabra:str) -> bool:
     vocCounter: int = 0
-    if (pertenecep('a', palabra)) or (pertenecep('A', palabra)):
+    if (perteneceStr('a', palabra)) or (perteneceStr('A', palabra)):
         vocCounter += 1
-    if (pertenecep('e', palabra)) or (pertenecep('E', palabra)):
+    if (perteneceStr('e', palabra)) or (perteneceStr('E', palabra)):
         vocCounter += 1
-    if (pertenecep('i', palabra)) or (pertenecep('I', palabra)):
+    if (perteneceStr('i', palabra)) or (perteneceStr('I', palabra)):
         vocCounter += 1
-    if (pertenecep('o', palabra)) or (pertenecep('O', palabra)):
+    if (perteneceStr('o', palabra)) or (perteneceStr('O', palabra)):
         vocCounter += 1
-    if (pertenecep('u', palabra)) or (pertenecep('U', palabra)):
+    if (perteneceStr('u', palabra)) or (perteneceStr('U', palabra)):
         vocCounter += 1
     return vocCounter >= 3
 '''

@@ -13,50 +13,53 @@ def contarLineas (nombre_del_archivo: str) -> int:
 print(contarLineas("texto.txt"))
 '''
 
-#Otra implementación del mismo ej
+# Otra implementación del mismo ej
 
 def contarLineas (nombre_del_archivo: str) -> int:
-    archivo = open (nombre_del_archivo,"r")
-    contenido:[str] = archivo.readlines()
+    archivo = open(nombre_del_archivo,"r")
+    contenido:[str] = archivo.readlines() # readlines devuelve las líneas del archivo en forma de lista de strings. ej: [linea-1, linea-2, linea-3, ..., linea-n]
     cantidad_lineas = len(contenido)
     archivo.close()
+
     return cantidad_lineas
 
-print(contarLineas("texto.txt"))
+print(contarLineas("/run/media/frnc/BLATTH/Facultad/IP-Algo1/introprog/Practicas/Practica_8_Ejercicios/texto.txt"))
 
-'''
+
 # Ej 1.2
-def existePalabra (palabra: str, nombre_del_archivo: str) -> bool:
-    existe = False
-    archivo = open (nombre_del_archivo,"r")
-    contenido = archivo.read()
-    aux = ""
-    for i in contenido:
-        if (i == ' ' or i == '\n'): #/n es un salto de línea
-            if (palabra == aux):
-                archivo.close()
-                existe = True
-            aux = ""
-        else:
-            aux = aux + i
-    archivo.close()
-    return existe
-#print(existePalabra("Lautaro","texto.txt"))
 
-# Ej 1.3
-def cantidad_de_apariciones (nombre_del_archivo:str,palabra:str) -> int:
-    archivo = open (nombre_del_archivo,"r")
-    apariciones = 0
-    contenido = archivo.read()
-    aux = ''
-    for i in contenido:
-        if (i == ' ' or i == '\n'):
-            if(palabra == aux):
-                apariciones += 1
-            aux = ""
-        else:
-            aux += i
+def existe_palabra(palabra:str,nombre_archivo:str)->bool:
+    result:bool = False
+    archivo = open(nombre_archivo,"r")
+    for linea in archivo.readlines():
+        if palabra in linea:
+            result=True
     archivo.close()
+
+    return result
+
+
+#print(existe_palabra("Computacion","/run/media/frnc/BLATTH/Facultad/IP-Algo1/introprog/Practicas/Practica_8_Ejercicios/texto.txt"))
+
+
+
+# Ej 1.3. Esto está mal, tengo que corregirlo
+def cantidad_de_apariciones (nombre_del_archivo:str,palabra:str) -> int:
+    archivo = open(nombre_del_archivo,"r")
+    contenido = archivo.readlines()
+    apariciones:int = 0
+    i:int = 0
+    for linea in contenido:
+        if palabra in linea[i]:
+                apariciones += 1
+                i += 1
+        else:
+            i += i
+    archivo.close()
+
     return apariciones
-#print(cantidad_de_apariciones("texto.txt","sos"))
-'''
+
+print(cantidad_de_apariciones("/run/media/frnc/BLATTH/Facultad/IP-Algo1/introprog/Practicas/Practica_8_Ejercicios/texto.txt","Ciencias de la Computacion"))
+
+
+

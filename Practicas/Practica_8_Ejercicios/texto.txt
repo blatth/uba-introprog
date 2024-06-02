@@ -5,3 +5,7 @@ c
 d
 e
 #e
+
+Introduccion a la Programacion
+Algoritmos y Estructuras de Datos
+Ciencias de la Computacion

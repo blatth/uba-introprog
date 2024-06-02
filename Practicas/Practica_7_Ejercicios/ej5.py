@@ -12,12 +12,12 @@ def pertenece2(e:int, s:list[int]) -> bool:
 
 def pertenece3(s:list[int], e:int) -> bool: # recordatorio: esta no está permitida en el parcial
     return e in s
-'''
+
 def pertenece_a_cada_uno_2 (s:list[list[int]], e:int, res: list[bool]) -> None:
     res.clear()
     for i in range (len(s)):
         res.append (pertenece3 (s[i], e))
-'''
+
 #pertenece_a_cada_uno_2([[1,2,1],[2,3,4], [3,4]], 3, res) # PREGUNTAR: me tira que "res" no está definido. no entiendo por qué
 
 #print(pertenece_a_cada_uno_2)

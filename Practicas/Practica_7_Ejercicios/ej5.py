@@ -10,7 +10,7 @@ def pertenece2(e:int, s:list[int]) -> bool:
 
     return pertenece2
 
-def pertenece3(s:list[int], e:int) -> bool: # recordatorio: esta no está permitida en el parcial
+def pertenece3(s:list[int], e:int) -> bool:
     return e in s
 
 def pertenece_a_cada_uno_2 (s:list[list[int]], e:int, res: list[bool]) -> None:
@@ -26,8 +26,10 @@ def pertenece_a_cada_uno_2 (s:list[list[int]], e:int, res: list[bool]) -> None:
 
 def esMatriz(matriz: list[list[int]]) -> bool:
     esMatriz:bool = True
-    for i in range (len(matriz)):
-        if (len(matriz[i]) != len(matriz[i+1])): # PREGUNTAR: entiendo por qué esto no funciona, pero no sé cómo hacer el ejercicio de otra forma
+    for i in range (len(matriz)-1): # acoto para que el i no se vaya de rango y se indefina
+        if (len(matriz[i]) != len(matriz[i+1])): 
             return False
         
-#print(esMatriz([[1, 2, 3], [1, 2, 3]]))
+    return esMatriz
+        
+print(esMatriz([[1, 2, 3], [1, 2, 3]]))

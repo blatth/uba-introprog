@@ -1,3 +1,16 @@
+from typing import TypeVar , Tuple
+T = TypeVar('T')
+
+def pertenece2(e:int, s:[int]) -> bool:
+    i:int = 0
+    pertenece2:bool = False
+    while (i < len(s)):
+        if (s[i] == e):
+          pertenece2 = True
+        i = i + 1
+
+    return pertenece2
+
 '''
 # Ej 1.1
 def contarLineas (nombre_del_archivo: str) -> int:
@@ -28,11 +41,17 @@ print(contarLineas("/run/media/frnc/BLATTH/Facultad/IP-Algo1/introprog/Practicas
 
 # Ej 1.2
 
-def existe_palabra(palabra:str,nombre_archivo:str)->bool:
+def perteneceGen(e:T, s:list[T]) -> bool:
+    for i in s:
+        if i == e:
+            return True
+    return False
+
+def existe_palabra(palabra:str, nombre_archivo:str) -> bool:
     result:bool = False
     archivo = open(nombre_archivo,"r")
-    for linea in archivo.readlines():
-        if palabra in linea:
+    for linea in archivo.readlines(): # cambiar el in por el pertenece genérico
+        if (perteneceGen(palabra, linea)):
             result=True
     archivo.close()
 
@@ -50,7 +69,7 @@ def cantidad_de_apariciones (nombre_del_archivo:str,palabra:str) -> int:
     apariciones:int = 0
     i:int = 0
     for linea in contenido:
-        if palabra in linea[i]:
+        if palabra in linea[i]: # cambiar el in por el pertenece genérico
                 apariciones += 1
                 i += 1
         else:

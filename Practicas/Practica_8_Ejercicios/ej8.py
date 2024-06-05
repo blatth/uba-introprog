@@ -32,3 +32,5 @@ mi_pila.put(11)
 
 p = generarNrosAlAzar(5, 1, 3)
 print(p.queue)
+
+# Tanto para cola como para pila, usar las funciones de la diapo 9 de la teórica

@@ -65,24 +65,10 @@ def da_vuelta_str(s:str) -> str: # ej: print(da_vuelta_str("Hola")) = "aloH". le
     
     return salida
 
-''' 
-# Preguntar cómo funciona esto
-
-def da_vuelta_str(s:str) -> str:
-    salida:str = ""
-    for i in range (len(s)):
-        salida = s[i]+salida
-
-    return salida
-
-''' 
-
 #Ej 2.6
 
-# PREGUNTAR
-# print(eliminar_repetidos("Algooritttmmo")) me duelve lo mismo. no entiendo por qué no funciona
-
-def perteneceStr(s:str, e:chr) -> bool:
+# Al final no lo use porque se puede usar el 'in'
+def perteneceStr(s:str, e:str) -> bool: # chr no existe en py, cambiarlo por str
     perteneceStr:bool = False
     for i in range (len(s)):
         if e == s[i]:
@@ -93,9 +79,11 @@ def perteneceStr(s:str, e:chr) -> bool:
 def eliminar_repetidos(s:str) -> str:
     salida:str = ""
     for i in range (len(s)):
-        if (not (perteneceStr(s[i], salida))):
+        if s[i] not in salida:
             salida += s[i]
+
     return salida
 
+print(eliminar_repetidos("Algooritttmmo"))
 
 

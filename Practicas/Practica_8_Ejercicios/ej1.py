@@ -50,7 +50,7 @@ def perteneceGen(e:T, s:list[T]) -> bool:
 def existe_palabra(palabra:str, nombre_archivo:str) -> bool:
     result:bool = False
     archivo = open(nombre_archivo,"r")
-    for linea in archivo.readlines(): # cambiar el in por el pertenece genérico
+    for linea in archivo.readlines():
         if (perteneceGen(palabra, linea)):
             result=True
     archivo.close()
@@ -69,7 +69,7 @@ def cantidad_de_apariciones (nombre_del_archivo:str,palabra:str) -> int:
     apariciones:int = 0
     i:int = 0
     for linea in contenido:
-        if palabra in linea[i]: # cambiar el in por el pertenece genérico
+        if palabra in linea[i]:
                 apariciones += 1
                 i += 1
         else:

@@ -18,9 +18,10 @@ def pertenece_a_cada_uno_2 (s:list[list[int]], e:int, res: list[bool]) -> None:
     for i in range (len(s)):
         res.append (pertenece3 (s[i], e))
 
-#pertenece_a_cada_uno_2([[1,2,1],[2,3,4], [3,4]], 3, res) # PREGUNTAR: me tira que "res" no está definido. no entiendo por qué
+    # return res --> este return res en realidad no va (la función no debe devolver nada), solamente lo usé para chequear que funcione bien
 
-#print(pertenece_a_cada_uno_2)
+# print(pertenece_a_cada_uno_2([[1,2,3], [1,2], [1,4,3]], 3, []))
+
 
 # Ej 5.3
 
@@ -32,7 +33,7 @@ def esMatriz(matriz: list[list[int]]) -> bool:
         
     return esMatriz
         
-print(esMatriz([[1, 2, 3], [1, 2, 3]]))
+#print(esMatriz([[1, 2, 3], [1, 2, 3]]))
 
 #Ej 5.4
 
@@ -52,4 +53,4 @@ def filas_ordenadas(m:list[list[int]], res:[bool]) -> None:
     
     return res
 
-print(filas_ordenadas([[1,2,3], [1, 2, 1]], []))
+#print(filas_ordenadas([[1,2,3], [1, 2, 1]], []))

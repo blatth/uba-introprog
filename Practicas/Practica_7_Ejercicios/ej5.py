@@ -33,3 +33,23 @@ def esMatriz(matriz: list[list[int]]) -> bool:
     return esMatriz
         
 print(esMatriz([[1, 2, 3], [1, 2, 3]]))
+
+#Ej 5.4
+
+def ordenados(seq:[int]) -> bool: # se fija si los elementos de una lista están ordenados o no
+    for i in range(len(seq)-1):
+        if (not(seq[i]<seq[i+1])):
+            return False
+    return True
+
+def filas_ordenadas(m:list[list[int]], res:[bool]) -> None:
+    res = []
+    for i in range (len(m)):
+        if (not ordenados(m[i])):
+            res.append(False)
+        else:
+            res.append(True)
+    
+    return res
+
+print(filas_ordenadas([[1,2,3], [1, 2, 2]], []))

@@ -44,7 +44,6 @@ def ordenados(seq:[int]) -> bool: # se fija si los elementos de una lista están
 
 def filas_ordenadas(m:list[list[int]], res:[bool]) -> None:
     res = []
-    res.clear()
     for i in range (len(m)):
         if (not ordenados(m[i])):
             res.append(False)

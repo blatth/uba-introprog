@@ -156,14 +156,15 @@ def columnasRepetidas(mat:list[list[int]]) -> bool:
         
     return res
 
-def matricesSimetricas(mat:list[list[int]]) -> bool:
+def matricesSimetricas(s:list[list[int]]) -> bool:
     mitad1: list = []
     mitad2: list = []
-    for i in range (len(mat) // 2):
-        mitad1.append(mat[i])
-    for j in range ((len(mat) // 2), len(mat)):
-        mitad2.append(mat[j])
+    for i in range (len(s) // 2):
+        mitad1.append(s[i])
+    for j in range ((len(s) // 2), len(s)):
+        mitad2.append(s[j])
     
     return mitad1 == mitad2
 
-print(columnasRepetidas([[1,2,1,2],[-5,6,-5,6],[0,1,3,1]]))
+print(columnasRepetidas([[1,2,1,2],[-5,6,-5,6],[0,1,0,1]])) # -> True
+print(columnasRepetidas([[1,2,1,2],[-5,6,-5,6],[0,1,3,1]])) # -> False

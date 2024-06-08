@@ -4,25 +4,11 @@ import random
 def generarNrosAlAzar(cantidad:int, desde:int, hasta:int) -> Pila[int]:
     p = Pila()
     for i in range(cantidad):
-        n:int = random.randint(desde,hasta)
-        p.put(n)
+        n:int = random.randint(desde,hasta) # random.randint genera una lista de ints random en un rango
+        p.put(n) # put va a apilando, empieza de abajo para arriba
 
     return p
 
-def contarElemPila(p:Pila[int]) -> int:
-    cantidad:int = 0
-    pilaAux = Pila()
-
-    while (not p.empty()):
-        elem = p.get()
-        cantidad += 1
-        pilaAux.put(elem)
-    
-    while (not pilaAux.empty()): #acá vuelvo a poner los elem de pilaAux en pila (que, a su vez, antes saqué de pila), porque fui sacando elementos y sino me queda en 0 al llamarla de vuelta
-        elem = pilaAux.get()
-        p.put(elem)
-    
-    return cantidad
 
 mi_pila = Pila()
 mi_pila.put(2)

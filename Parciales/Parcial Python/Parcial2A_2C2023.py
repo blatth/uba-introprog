@@ -147,3 +147,23 @@ print(pos_umbral([1,-2,0,5,-7,3], 5))   # -> 3
 print(pos_umbral([1,-2,0,5,-7,3], 16))  # -> -1
 
 # 3
+
+def columnasRepetidas(mat:list[list[int]]) -> bool:
+    res: bool = True
+    for l in mat:
+        if not matricesSimetricas(l):
+            res = False
+        
+    return res
+
+def matricesSimetricas(mat:list[list[int]]) -> bool:
+    mitad1: list = []
+    mitad2: list = []
+    for i in range (len(mat) // 2):
+        mitad1.append(mat[i])
+    for j in range ((len(mat) // 2), len(mat)):
+        mitad2.append(mat[j])
+    
+    return mitad1 == mitad2
+
+print(columnasRepetidas([[1,2,1,2],[-5,6,-5,6],[0,1,3,1]]))

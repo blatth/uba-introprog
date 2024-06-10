@@ -168,3 +168,52 @@ def matricesSimetricas(s:list[list[int]]) -> bool:
 
 print(columnasRepetidas([[1,2,1,2],[-5,6,-5,6],[0,1,0,1]])) # -> True
 print(columnasRepetidas([[1,2,1,2],[-5,6,-5,6],[0,1,3,1]])) # -> False
+
+# 4
+
+def buscar_indices(s:list, cadena:str) -> int:
+    for i in range(len(s)):
+        if s[i] == cadena:
+            return i
+    
+    return -1
+
+def cuenta_posiciones_por_nacion(naciones:list[str], torneos:dict[int, list[str]]) -> dict[str, list[int]]:
+    res: dict = {}
+    for n in naciones: # n = nación. para cada nación en naciones, creo una lista de 0 la cual es su valor en la lista res
+        listaDe0s = [0] * len(naciones)
+        res[n] = listaDe0s
+        for posicionesPorTorneo in torneos.values(): # torneos.values() agarra la lista de strings
+            pos:int = buscar_indices(posicionesPorTorneo,  n) # con buscar indices me fijo que 
+            listaDe0s[pos] += 1
+
+    return res
+
+'''
+def cuenta_posiciones_por_nacion(naciones:[str], torneos: dict) -> dict:
+    res:dict = {}
+    for nacion in naciones:
+        res[nacion] = [0] * len(naciones)
+        for n in torneos.keys():
+            l = torneos[n]
+            for i in range(len(l)):
+                if nacion == l[i]:
+                    res[nacion][i] += 1
+    return res
+
+print(cuenta_posiciones_por_nacion(naciones, torneos))
+
+
+naciones = ["arg", "aus", "nz", "sud"]
+torneos = {2023:["nz", "sud", "arg", "aus"], 2022:["nz", "sud", "aus", "arg"]}
+print(cuenta_posiciones_por_nacion(naciones, torneos))
+
+for año in torneos.keys():
+    print(len(torneos[año]))
+'''
+
+naciones = ["arg", "aus", "nz", "sud"]
+torneos = {2023:["nz", "sud", "arg", "aus"], 2022:["nz", "sud", "aus", "arg"]}
+print(cuenta_posiciones_por_nacion(naciones, torneos))
+
+print(buscar_indices("Hola", "f"))

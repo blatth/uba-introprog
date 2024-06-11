@@ -64,32 +64,42 @@ def subsecuencia_mas_larga(tipos_pacientes_atendidos: list[str]) -> int:
 
     return max_indice
 
-tipos_pacientes_atendidos = ["perro", "gato", "perro", "ave", "gato", "gato", "perro", "gato", "perro", "perro"]
+tipos_pacientes_atendidos = ["ave", "perro", "gato", "perro", "ave", "gato", "gato", "perro", "gato", "perro", "perro"]
 print(subsecuencia_mas_larga(tipos_pacientes_atendidos)) # -> i = 4
 
 # 4
 
 def una_responsable_por_turno_en_grilla(grilla_horaria: list[list[str]]) -> list[tuple[bool, bool]]:
     resultado = []
-    for dia in grilla_horaria:
+    for i_columna in range(len(grilla_horaria[0])):
         maniana_continua = True
         tarde_continua = True
  
-        i = 1
-        while i < 4 and maniana_continua: # turnos de la mañana (índices: 0, 1, 2, 3)
-            if dia[i] != dia[0]:
+        i_fila = 1
+        if i_fila < 4 and maniana_continua: # turnos de la mañana (índices: 0, 1, 2, 3)
+            if grilla_horaria[i_fila][i_columna] != grilla_horaria[0][i_columna]:
                 maniana_continua = False
-            i += 1
+            i_fila += 1
 
-        j = 5
-        while j < 8 and tarde_continua: # turnos de la tarde (índices: 4, 5, 6, 7)
-            if dia[j] != dia[4]:
+        j_fila = 5
+        if j_fila < 8 and tarde_continua: # turnos de la tarde (índices: 4, 5, 6, 7)
+            if grilla_horaria[j_fila][i_columna] != grilla_horaria[4][i_columna]:
                 tarde_continua = False
-            j += 1
+            j_fila += 1
 
         resultado.append((maniana_continua, tarde_continua))
 
     return resultado
 
-grilla_horaria = [["Ana", "Ana", "Ana", "Ana", "Carlos", "Carlos", "Carlos", "Carlos"],["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"]]
+grilla_horaria = [ # Turno mañana
+                  ["Ana", "Ana", "Ana", "Ana", "Carlos", "Carlos", "Carlos", "Carlos"],
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
+                  # Turno tarde
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"]]
+
 print(una_responsable_por_turno_en_grilla(grilla_horaria)) # -> [(True, True), (False, False)]

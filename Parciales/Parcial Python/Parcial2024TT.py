@@ -76,13 +76,13 @@ def una_responsable_por_turno_en_grilla(grilla_horaria: list[list[str]]) -> list
         tarde_continua = True
  
         i_fila = 1
-        if i_fila < 4 and maniana_continua: # turnos de la mañana (índices: 0, 1, 2, 3)
+        while i_fila < 4 and maniana_continua: # turnos de la mañana (índices: 0, 1, 2, 3)
             if grilla_horaria[i_fila][i_columna] != grilla_horaria[0][i_columna]:
                 maniana_continua = False
             i_fila += 1
 
         j_fila = 5
-        if j_fila < 8 and tarde_continua: # turnos de la tarde (índices: 4, 5, 6, 7)
+        while j_fila < 8 and tarde_continua: # turnos de la tarde (índices: 4, 5, 6, 7)
             if grilla_horaria[j_fila][i_columna] != grilla_horaria[4][i_columna]:
                 tarde_continua = False
             j_fila += 1
@@ -100,6 +100,6 @@ grilla_horaria = [ # Turno mañana
                   ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
                   ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
                   ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
-                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"]]
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Ana", "Carlos"]]
 
-print(una_responsable_por_turno_en_grilla(grilla_horaria)) # -> [(True, True), (False, False)]
+print(una_responsable_por_turno_en_grilla(grilla_horaria)) # -> [(True, True), (True, True), (True, True), (False, True), (True, True), (True, True), (False, True), (True, True)]

@@ -173,7 +173,7 @@ print(columnasRepetidas([[1,2,1,2],[-5,6,-5,6],[0,1,3,1]])) # -> False
 
 def buscar_indices(s:list, cadena:str) -> int:
     for i in range(len(s)):
-        if s[i] == cadena:
+        if s[i] == cadena: 
             return i
     
     return -1

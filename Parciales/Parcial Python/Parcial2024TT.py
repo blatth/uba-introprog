@@ -4,7 +4,7 @@ def stock_productos(stock_cambios: list[tuple[str, int]]) -> dict[str, tuple[int
     resultado = {}
     for nombre, cantidad in stock_cambios:
         if nombre in resultado:
-            min_cantidad, max_cantidad = resultado[nombre] # hago que el primero elem de la tupla que es valor sea min_c y el segundo max_c
+            min_cantidad, max_cantidad = resultado[nombre] # hago que el primer elem de la tupla que es valor sea min_c y el segundo max_c y que ambos tengan el valor de la cantidad ya cargada
             if cantidad < min_cantidad: # comparo las cantidades de acuerdo a lo que va ingresando
                 min_cantidad = cantidad
             if cantidad > max_cantidad:

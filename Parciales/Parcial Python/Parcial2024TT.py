@@ -2,6 +2,7 @@
 
 def stock_productos(stock_cambios: list[tuple[str, int]]) -> dict[str, tuple[int, int]]:
     resultado = {}
+
     for nombre, cantidad in stock_cambios:
         if nombre in resultado:
             min_cantidad, max_cantidad = resultado[nombre] # hago que el primer elem de la tupla que es valor sea min_c y el segundo max_c y que ambos tengan el valor de la cantidad ya cargada
@@ -10,6 +11,7 @@ def stock_productos(stock_cambios: list[tuple[str, int]]) -> dict[str, tuple[int
             if cantidad > max_cantidad:
                 max_cantidad = cantidad
             resultado[nombre] = (min_cantidad, max_cantidad)
+
         else:
             resultado[nombre] = (cantidad, cantidad)
     return resultado
@@ -21,18 +23,19 @@ print(stock_productos(stock_cambios)) # -> {'producto1': (2, 5), 'producto2': (3
 
 def es_primo(numero: int) -> bool:
     es_primo = True
+
     if numero < 2:
         es_primo = False
-    else:
-        i = 2
-        while i <= (numero**0.5) and es_primo:
-            if numero % i == 0:
-                es_primo = False
-            i += 1
+
+    for i in range(2, numero):
+        if numero % i == 0:
+            return False
+        
     return es_primo
 
 def filtrar_codigos_primos(codigos_barra: list[int]) -> list[int]:
     resultado = []
+
     for codigo in codigos_barra:
         ultimos_tres = codigo % 1000
         if es_primo(ultimos_tres):
@@ -41,7 +44,7 @@ def filtrar_codigos_primos(codigos_barra: list[int]) -> list[int]:
 
 codigos_barra = [321101, 7457202, 865307, 8658404, 747003]
 print(filtrar_codigos_primos(codigos_barra)) # -> [321101, 865307, 747003]
-#print(es_primo(4))
+print(es_primo(404))
 
 # 3
 
@@ -59,6 +62,7 @@ def subsecuencia_mas_larga(tipos_pacientes_atendidos: list[str]) -> int:
             if longitud_actual > max_longitud:
                 max_longitud = longitud_actual
                 max_indice = indice_actual
+
         else:
             longitud_actual = 0
 
@@ -71,6 +75,7 @@ print(subsecuencia_mas_larga(tipos_pacientes_atendidos)) # -> i = 4
 
 def una_responsable_por_turno_en_grilla(grilla_horaria: list[list[str]]) -> list[tuple[bool, bool]]:
     resultado = []
+
     for i_columna in range(len(grilla_horaria[0])):
         maniana_continua = True
         tarde_continua = True
@@ -104,3 +109,4 @@ grilla_horaria = [ # Turno mañana
 
 print(una_responsable_por_turno_en_grilla(grilla_horaria)) # -> [(True, True), (True, True), (True, True), (False, True), (True, True), (True, True), (False, False), (True, True)]
 
+    

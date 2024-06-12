@@ -51,7 +51,7 @@ estrategias:dict[(str, str)] = {
 
 def torneo_de_gallinas(estrategias:dict[(str, str)]) -> dict[(str, int)]:
     res:dict[(str, int)] = {}
-    for jugador in estrategias.items(): # jugador se piensa como la tupla (nombre, puntaje) de res
+    for jugador in estrategias.items(): # jugador se piensa como la tupla (nombre, estrategia) de res
         puntaje = 0 #contador
         for jugador2 in estrategias.items(): # jugador2 se define para compararse con jugador
             if jugador != jugador2: # defino 4 opciones porque hay 4 posibilidades de puntaje, de acuerdo a si las estrategias son iguales o no
@@ -71,6 +71,7 @@ print(torneo_de_gallinas(estrategias))
 
 # 3
 
+'''
 def quien_gano_el_tateti_facilito(tablero: list[list[str]]) -> int:
     res1:int=0
     res2:int=0
@@ -82,8 +83,31 @@ def quien_gano_el_tateti_facilito(tablero: list[list[str]]) -> int:
                 res2 += 2
 
     return res1 + res2
+'''
 
-print(quien_gano_el_tateti_facilito([["X","O","X"],["O","X","O"],["X","O","O"]]))
+# Lo hice de otra forma para "mecanizar" esta solución. Itero sobre un i_columna en el rango de la len de la lista, luego itero dentro de eso con la len de la lista, nuevamente. en este caso acoté y lo hice entre 0, 1 para que no se indefina (porque comparo con los 2 siguientes al 0)
+# Voy comparando línea a línea con el término de cada lista (o fila) que se encuentra en igual posición
+
+def quien_gano_el_tateti_facilito(tablero: list[list[str]]) -> int:
+    resX:int = 0
+    resO:int = 0
+
+    for i_columna in range(len(tablero[0])): # range (len(tablero[0])) = 3 
+
+        for i_fila in range (0, 1): # range (0, 1) = 2
+            if tablero[i_fila][i_columna] == tablero[i_fila+1][i_columna] and tablero[i_fila][i_columna] == tablero[i_fila+2][i_columna] == "X":
+                resX = 1
+            elif tablero[i_fila][i_columna] == tablero[i_fila+1][i_columna] and tablero[i_fila][i_columna] == tablero[i_fila+2][i_columna] == "O":
+                resO = 2
+    
+    return resX + resO
+
+print(quien_gano_el_tateti_facilito([["X","O","X"],["O","X","O"],["X","O","O"]])) # -> 0
+# print(quien_gano_el_tateti_facilito([["X","O","X"],["X","X","O"],["X","O","O"]])) # -> 1
+# print(quien_gano_el_tateti_facilito([["X","O","X"],["X","O","O"],["X","O","O"]])) # -> 3
+# print(quien_gano_el_tateti_facilito([["X","O","X"],["X","X","O"],["X","O","O"]])) # -> 1
+# print(quien_gano_el_tateti_facilito([["X","O","X"],["O","O","O"],["X","O","O"]])) # -> 2
+
 
 # 4
 

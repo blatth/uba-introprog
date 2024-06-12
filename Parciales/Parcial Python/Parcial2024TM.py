@@ -69,6 +69,8 @@ def torneo_de_gallinas(estrategias:dict[(str, str)]) -> dict[(str, int)]:
 
 print(torneo_de_gallinas(estrategias))
 
+# 3
+
 def quien_gano_el_tateti_facilito(tablero: list[list[str]]) -> int:
     res1:int=0
     res2:int=0
@@ -89,22 +91,26 @@ def es_palindromo(texto:str) -> bool:
     ultimaLetra:int = len(texto)-1
     i:int = 0
 
-    while i < ultimaLetra and i != ultimaLetra:
+    while i < ultimaLetra:
         if texto[i] != texto[ultimaLetra]:
             return False
         i += 1
         ultimaLetra -= 1
     return True
 
-# Tengo que corregirlo v
 def cuantos_sufijos_son(texto: str) -> int:
     contador:int = 0
-    while len(texto) > 0:
-        texto.pop(0)
-        sufijo = texto
+    
+    for i in range(len(texto)):
+        sufijo = "" # voy armando un sufijo
+        for j in range(i, len(texto)):
+            sufijo += texto[j]
         if es_palindromo(sufijo):
             contador += 1
+    
     return contador
 
-# print(es_palindromo("anastasia"))
+# todas las palabras van a tener un contador >= 1 porque cuando queda una sola letra (por ej: en anastasia la última iteración es "a"), eso cuenta como un palíndromo (contador = 1)
+
+print(es_palindromo("anastasia"))
 print(cuantos_sufijos_son("anastasia"))

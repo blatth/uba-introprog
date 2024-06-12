@@ -79,22 +79,19 @@ def una_responsable_por_turno_en_grilla(grilla_horaria: list[list[str]]) -> list
     for i_columna in range(len(grilla_horaria[0])):
         maniana_continua = True
         tarde_continua = True
- 
-        i_fila = 1
-        while i_fila < 4 and maniana_continua: # turnos de la mañana (índices: 0, 1, 2, 3)
-            if grilla_horaria[i_fila][i_columna] != grilla_horaria[0][i_columna]:
+        
+        for i_fila in range(1, 4):  # turnos de la mañana (índices: 0, 1, 2, 3)
+            if maniana_continua and grilla_horaria[i_fila][i_columna] != grilla_horaria[0][i_columna]:
                 maniana_continua = False
-            i_fila += 1
-
-        j_fila = 5
-        while j_fila < 8 and tarde_continua: # turnos de la tarde (índices: 4, 5, 6, 7)
-            if grilla_horaria[j_fila][i_columna] != grilla_horaria[4][i_columna]:
+        
+        for j_fila in range(5, 8):  # turnos de la tarde (índices: 4, 5, 6, 7)
+            if tarde_continua and grilla_horaria[j_fila][i_columna] != grilla_horaria[4][i_columna]:
                 tarde_continua = False
-            j_fila += 1
-
+        
         resultado.append((maniana_continua, tarde_continua))
 
     return resultado
+        
 
 grilla_horaria = [ # Turno mañana
                   ["Ana", "Ana", "Ana", "Ana", "Carlos", "Carlos", "Carlos", "Carlos"], # i_fila = 0 -> todos comparan con este

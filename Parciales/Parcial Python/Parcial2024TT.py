@@ -92,14 +92,14 @@ def una_responsable_por_turno_en_grilla(grilla_horaria: list[list[str]]) -> list
     return resultado
 
 grilla_horaria = [ # Turno mañana
-                  ["Ana", "Ana", "Ana", "Ana", "Carlos", "Carlos", "Carlos", "Carlos"],
-                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
-                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
-                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
+                  ["Ana", "Ana", "Ana", "Ana", "Carlos", "Carlos", "Carlos", "Carlos"], # i_fila = 0 -> todos comparan con este
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"], # i_fila = 1
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"], # i_fila = 2
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"], # i_fila = 3
                   # Turno tarde
-                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
-                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
-                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"],
-                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Ana", "Carlos"]]
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"], # i_fila = 4 -> todos comparan con este
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"], # i_fila = 5
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Pedro", "Carlos"], # i_fila = 6
+                  ["Ana", "Ana", "Ana", "Pedro", "Carlos", "Carlos", "Ana", "Carlos"]] # i_fila = 7
 
 print(una_responsable_por_turno_en_grilla(grilla_horaria)) # -> [(True, True), (True, True), (True, True), (False, True), (True, True), (True, True), (False, False), (True, True)]

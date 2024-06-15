@@ -3,6 +3,25 @@ import Data.Char
 
 {-
 
+Nota final: 83/100
+Calidad del código: Buen código
+Calificación por ej (casos de test de la materia): [0.25, 0.25, 0.25, 0.25, 0.25, 0.25,	0.5, 0.75, 1, 0.84,	1, 1, 1, 1,	0.68]	
+Calificación por casos de test del grupo: [MB, B, MB, B, B,	B, B, B, MB, MB, B,	B, B, R, B]
+
+Devolución: 
+
+"Buenas. 
+En casos como estos:
+    esMinuscula c | ord c >= 97 && ord c <= 122 = True
+usar 'a' en vez de 97 facilita entender el código. Lo mismo con todos los números sueltos que aparecen en el código. 
+
+En algunos casos, como faltan comentarios que aclaren lo que quieren hacer, es muy difícil seguir el código."
+
+-}
+
+
+{-
+
 Funciones válidas:
 
 mod :: Integral a => a -> a -> a

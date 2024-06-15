@@ -1,17 +1,17 @@
 # Introducción a la Programación - Algoritmos y Estructuras de Datos I
 
-1er cuatrimestre 2024
+## 1er Cuatrimestre - 2024
 
 ## Evaluaciones
-| Titulo | Enunciado                                                                                          | Solución                                                                                                      |
+| Instancia | Enunciado                                                                                          | Solución                                                                                                      |
 |----------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
 | Haskell: Primer parcial   | [Enunciado](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs) | [Solución](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs)
-| Haskell: TP   | [Enunciado](https://github.com/blatth/introprog/blob/master/TP/Enunciado.pdf) | [Solución](https://github.com/blatth/introprog/blob/master/TP/Solucion.hs)
+| Haskell: TP   | [Enunciado](https://github.com/blatth/introprog/blob/master/TP/Enunciado.pdf) | [Solución](https://github.com/blatth/introprog/blob/master/TP/Solucion.hs), [Tests](https://github.com/blatth/introprog/blob/master/TP/test-grupo.hs)
 | Python: Segundo parcial   | [Enunciado]() | [Solución]()
 
-## Teoricas
+## Teóricos
 
-| Nro | Titulo                                                                                          |
+| N° | Tema                                                                                          |
 |-----|----------------------------------------------------------------------------------------------------|
 | 1   | [Introducción a la materia](https://github.com/blatth/introprog/blob/master/Teoricos/Teorico1.pdf)
 | 2   | [Lógica proposicional](https://github.com/blatth/introprog/blob/master/Teoricos/Teorico2.pdf)

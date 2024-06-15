@@ -5,7 +5,7 @@
 ## Evaluaciones
 | Titulo | Enunciado                                                                                          | Solución                                                                                                      |
 |----------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| Haskell: Primer parcial   | [Enunciado](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs) | [Solución]https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs)
+| Haskell: Primer parcial   | [Enunciado](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs) | [Solución](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs)
 | Haskell: TP   | [Enunciado](https://github.com/blatth/introprog/blob/master/TP/Enunciado.pdf) | [Solución](https://github.com/blatth/introprog/blob/master/TP/Solucion.hs)
 | Python: Segundo parcial   | [Enunciado]() | [Solución]()
 

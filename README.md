@@ -27,6 +27,8 @@
 | Haskell: TP   | [Enunciado](https://github.com/blatth/introprog/blob/master/TP/Enunciado.pdf) | [Solución](https://github.com/blatth/introprog/blob/master/TP/Solucion.hs) - [Tests](https://github.com/blatth/introprog/blob/master/TP/test-grupo.hs)
 | Python: Segundo parcial   | [Enunciado](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Python/Parcial2024.py) | [Solución](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Python/Parcial2024.py)
 
+* En las carpetas de parciales hay resoluciones de parciales viejos o de otros turnos tanto de [Haskell](https://github.com/blatth/introprog/tree/master/Parciales/Parcial%20Haskell) como de [Python](https://github.com/blatth/introprog/tree/master/Parciales/Parcial%20Python).
+
 ## Prácticos
 
 | N° |                  Guía                            | Clase práctica | Resolución |

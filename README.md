@@ -16,7 +16,7 @@
 | 8   | [Arrays/Listas (Python)](https://github.com/blatth/introprog/blob/master/Teoricos/Teorico8.pdf)
 | 9   | [Tipos Abstractos de Datos, Testing de Caja Blanca, Colas, Pilas y Diccionarios (Python)](https://github.com/blatth/introprog/blob/master/Teoricos/Teorico9.pdf)
 | 10  | [Introducción a Programación Orientada a Objetos y APIs](https://github.com/blatth/introprog/blob/master/Teoricos/Teorico10.pdf)
-| 11  | [Nociones de complejidad algorítmica]
+| 11  | [Nociones de complejidad algorítmica](https://github.com/blatth/introprog/blob/master/Teoricos/Teorico11.pptx)
 
 * Las últimas 2 teóricas no entraron ni al final ni al coloquio, sino que sirvieron como introducción a la siguiente materia de Algoritmos (Algo II/AED).
 

@@ -23,9 +23,9 @@
 ## Evaluaciones
 | Instancia | Enunciado                                                                                          | Solución                                                                                                      |
 |----------------------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| Haskell: Primer parcial   | [Enunciado](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs) | [Solución](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs)
-| Haskell: TP   | [Enunciado](https://github.com/blatth/introprog/blob/master/TP/Enunciado.pdf) | [Solución](https://github.com/blatth/introprog/blob/master/TP/Solucion.hs) - [Tests](https://github.com/blatth/introprog/blob/master/TP/test-grupo.hs)
-| Python: Segundo parcial   | [Enunciado](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Python/Parcial2024.py) | [Solución](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Python/Parcial2024.py)
+| Primer parcial (Haskell)   | [Enunciado](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs) | [Solución](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Haskell/Parcial2024TN.hs)
+| TP (Haskell)   | [Enunciado](https://github.com/blatth/introprog/blob/master/TP/Enunciado.pdf) | [Solución](https://github.com/blatth/introprog/blob/master/TP/Solucion.hs) - [Tests](https://github.com/blatth/introprog/blob/master/TP/test-grupo.hs)
+| Segundo parcial (Python)   | [Enunciado](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Python/Parcial2024.py) | [Solución](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Python/Parcial2024.py)
 
 * En la carpeta de parciales hay resoluciones de parciales viejos o de otros turnos tanto de [Haskell](https://github.com/blatth/introprog/tree/master/Parciales/Parcial%20Haskell) como de [Python](https://github.com/blatth/introprog/tree/master/Parciales/Parcial%20Python).
 

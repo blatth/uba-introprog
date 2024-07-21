@@ -27,7 +27,7 @@
 | TP (Haskell)   | [Enunciado](https://github.com/blatth/introprog/blob/master/TP/Enunciado.pdf) | [Solución](https://github.com/blatth/introprog/blob/master/TP/Solucion.hs) - [Tests](https://github.com/blatth/introprog/blob/master/TP/test-grupo.hs)
 | Segundo parcial (Python)   | [Enunciado](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Python/Parcial2024.py) | [Solución](https://github.com/blatth/introprog/blob/master/Parciales/Parcial%20Python/Parcial2024.py)
 
-* En la carpeta de parciales hay resoluciones de parciales viejos o de otros turnos tanto de [Haskell](https://github.com/blatth/introprog/tree/master/Parciales/Parcial%20Haskell) como de [Python](https://github.com/blatth/introprog/tree/master/Parciales/Parcial%20Python).
+* En la carpeta de __parciales__ hay resoluciones de parciales viejos o de otros turnos tanto de [Haskell](https://github.com/blatth/introprog/tree/master/Parciales/Parcial%20Haskell) como de [Python](https://github.com/blatth/introprog/tree/master/Parciales/Parcial%20Python).
 
 ## Prácticos
 
@@ -41,3 +41,4 @@
 | 8  | [Archivos, Pilas, Colas y Diccionarios (Python)](https://github.com/blatth/introprog/blob/master/Gu%C3%ADas/Guia8.pdf)  | [Clase 8](https://github.com/blatth/introprog/blob/master/Practicas/Practica8_Clase.pdf) - [Clase 8.2](https://github.com/blatth/introprog/blob/master/Practicas/Practica8_Clase2.pdf)| [Resolución 8](https://github.com/blatth/introprog/tree/master/Practicas/Practica_8_Ejercicios)
 
 * Las guías de Haskell tienen pocos ejercicios resueltos, recomiendo estudiar con parciales viejos a medida que se acerquen al primer parcial.
+* En esta cursada no se evaluó __Archivos__ en los parciales.
